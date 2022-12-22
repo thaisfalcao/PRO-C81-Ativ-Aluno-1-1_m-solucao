@@ -125,7 +125,7 @@ export default class TransactionScreen extends Component {
         transactionType = false;
       } else {
         bookRef.docs.map(doc => {
-          transactionType = doc.data().is_book_avaliable?"issue":"return";
+          transactionType = doc.data().is_book_available?"issue":"return";
         })
       }
       return transactionType;
@@ -145,7 +145,7 @@ export default class TransactionScreen extends Component {
     db.collection("books")
       .doc(bookId)
       .update({
-        is_book_avaliable: false
+        is_book_available: false
       });
     //alterar o número de livros retirados pelo aluno
     db.collection("students")
@@ -176,7 +176,7 @@ export default class TransactionScreen extends Component {
     db.collection("books")
       .doc(bookId)
       .update({
-        is_book_avaliable: true
+        is_book_available: true
       });
     //alterar o número de livros retirados pelo aluno
     db.collection("students")
